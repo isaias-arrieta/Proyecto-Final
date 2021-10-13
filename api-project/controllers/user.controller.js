@@ -1,6 +1,6 @@
 const User = require("../models/user.model.js");
 
-exports.getAll = (req, res) => {
+exports.getAll = (res) => {
    User.getAll((err, data) => {
       if (err) {
          res.status(500).send({
@@ -15,7 +15,7 @@ exports.getAll = (req, res) => {
 
 exports.getSingle = (req, res) => {
 
-   if (!req.params.userId) {
+   if (!req.params.userid) {
       res.status(400).send({
          message: "Error: user id not specified, send parameter 'id'"
       })
@@ -47,6 +47,11 @@ exports.create = (req, res) => {
          message: "Error: firstName can't be empty"
       });
    }
+   if (!req.body.middleName) {
+      res.status(400).send({
+         message: "Error: lastName can't be empty"
+      });
+   }
 
    if (!req.body.lastName) {
       res.status(400).send({
@@ -54,18 +59,23 @@ exports.create = (req, res) => {
       });
    }
 
-   if (!req.body.gender) {
+   if (!req.body.email) {
       res.status(400).send({
          message: "Error: gender can't be empty"
       });
    }
-
+   if (!req.body.hash) {
+      res.status(400).send({
+         message: "Error: gender can't be empty"
+      });
+   }
    const user = new User({
       firstName: req.body.firstName,
+      middleName: req.body.middleName,
       lastName: req.body.lastName,
-      location: req.body.location || null,
-      phone: req.body.phone || null,
-      gender: req.body.gender
+      email: req.body.email ,
+      hash: req.body.hash,
+      createdAt: req.body.createdAt
    })
 
    User.create(user, (err, data) => {
@@ -87,15 +97,14 @@ exports.create = (req, res) => {
 
 exports.update = (req, res) => {
 
-   if (!req.body.id) {
-      res.status(400).send({
-         message: "Error: id is missing. Send the user's id as 'id'"
-      });
-   }
-
    if (!req.body.firstName) {
       res.status(400).send({
          message: "Error: firstName can't be empty"
+      });
+   }
+   if (!req.body.middleName) {
+      res.status(400).send({
+         message: "Error: lastName can't be empty"
       });
    }
 
@@ -105,12 +114,17 @@ exports.update = (req, res) => {
       });
    }
 
-   if (!req.body.gender) {
+   if (!req.body.email) {
       res.status(400).send({
          message: "Error: gender can't be empty"
       });
    }
-
+   if (!req.body.hash) {
+      res.status(400).send({
+         message: "Error: gender can't be empty"
+      });
+   }
+   
    console.log("about to update");
 
    User.update(

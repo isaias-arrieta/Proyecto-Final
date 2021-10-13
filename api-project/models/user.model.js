@@ -1,16 +1,17 @@
 const sql = require("./db");
 
 const User = function(user) {
-   this.userId = user.userId;
    this.firstName = user.firstName;
-   this.secondName = user.secondName || null;
+   this.middleName = user.middleName || null;
    this.lastName = user.lastName;
+   this.email = user.email;
    this.hash = user.hash;
-   this.privileges = user.privileges;
+   this.createdAt = user.createdAt;
+   this.updatedAt = user.updatedAt || null;
 }
 
 User.getSingle = (userId, result) => {
-   sql.query("SELECT * FROM users WHERE idUsers=?", userId, (err, res) => {
+   sql.query("SELECT * FROM users WHERE id=?", userId, (err, res) => {
       if (err) {
          console.log("error: ", err);
          result(null, err);
@@ -21,7 +22,7 @@ User.getSingle = (userId, result) => {
 };
 
 User.getAll = result => {
-   sql.query("SELECT * FROM Users", (err, res) => {
+   sql.query("SELECT * FROM users", (err, res) => {
       if (err) {
          console.log("error: ", err);
          result(null, err);
@@ -45,7 +46,7 @@ User.create = (newUser, result) => {
 };
 
 User.update = (userId, userToUpdate, result) => {
-   sql.query("UPDATE users SET Name = ?, SecondName = ?, LastName = ?, HashPassword = ?, Administrator = ? WHERE idUser = ?", [userToUpdate.firstName, userToUpdate.secondName, userToUpdate.lastName, userToUpdate.phone, userToUpdate.gender, userId],
+   sql.query("UPDATE users SET firstName = ?, middletName = ?,, lastName = ?, email = ?, hash = ? WHERE id = ?", [userToUpdate.firstName,  userToUpdate.middleName, userToUpdate.lastName, userToUpdate.email, userToUpdate.hash, userId],
       (err, res) => {
          if (err) {
             console.log("error: ", err);

@@ -1,7 +1,7 @@
 {
   "name": "api-project",
   "version": "1.0.0",
-  "description": "Api for final project",
+  "description": "APÌ for final Project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,9 +9,8 @@
   "author": "Ricardo Mar Cupido",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.8.2",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "expressjs": "^1.0.1",
-    "multer": "^1.4.3"
+    "mysql2": "^2.3.0"
   }
 }

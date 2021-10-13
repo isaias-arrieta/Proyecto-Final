@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const multer  = require('multer')
 
 const app = express();
 app.use(cors());
@@ -19,7 +18,7 @@ app.get('/', (req, res) => {
 });
 
 require("./routes/user.routes")(app);
-require("./routes/path.routes")(app);
+
 app.listen(port, () => {
    console.log('works');
 	console.log("hola");

@@ -1,5 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const multer  = require('multer')
+const upload = multer()
 const cors = require('cors');
 
 const app = express();
@@ -18,6 +20,7 @@ app.get('/', (req, res) => {
 });
 
 require("./routes/user.routes")(app);
+require("./routes/path.routes")(app);
 
 app.listen(port, () => {
    console.log('works');

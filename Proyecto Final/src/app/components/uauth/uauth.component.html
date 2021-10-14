@@ -1,16 +1,35 @@
+<style>
+    .res-pass{
+       float: right;
+       margin-top: 15px; 
+    }
+    .log{
+        float: left;
+        margin-top: 15px;
+    }
+
+    .txt{
+        margin-left: 40px;
+    }
+    
+    .txt2{
+        margin-left: 10px;
+    }
+</style>
+
 <form>
     <div class = "input">
-        <label>User: </label>
-        <input type = "text" name = "username" [(ngModel)] = "username!">
+        <label>User</label>
+        <input class = "txt" type = "text" name = "username" [(ngModel)] = "username!">
     </div>
     <div class = "input">
-        <label>Password: </label>
-        <input type = "password" name = "password" [(ngModel)] = "password!">
+        <label>Password</label>
+        <input class = "txt2" type = "password" name = "password" [(ngModel)] = "password!">
     </div>
     <div class = "input">
-        <input type = "submit" value = "Login">
+        <input class = "log" type = "submit" value = "Login">
     </div>
     <div class = "input">
-        <input type = "submit" value = "Restore Password">
+        <input class = "res-pass" type = "submit" value = "Restore Password">
     </div>
 </form>

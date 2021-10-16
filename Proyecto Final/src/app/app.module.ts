@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UAuthComponent } from './components/uauth/uauth.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ModalRegisComponent } from './components/modal-regis/modal-regis.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UAuthComponent
+    UAuthComponent,
+    ModalRegisComponent
   ],
   imports: [
     BrowserModule,

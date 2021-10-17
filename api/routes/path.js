@@ -4,6 +4,6 @@ const documentUploader = require('../helper/document-uploader')
 const checkAuth= require('../middleware/checkj-auth')
 const router = express.Router();
 
-router.post("/upload/:id",checkAuth.checkAuth, documentUploader.upload.array('multi-files'), pathController.upload);
+router.post("/upload/:id",checkAuth.checkAuth, documentUploader.upload.single('file'), pathController.upload);
 
 module.exports = router;

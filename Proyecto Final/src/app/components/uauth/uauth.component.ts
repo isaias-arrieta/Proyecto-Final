@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalRecucontraComponent } from '../modal-recucontra/modal-recucontra.component'; 
 
 @Component({
   selector: 'app-uauth',
@@ -9,7 +11,7 @@ export class UAuthComponent implements OnInit {
 
   username!: string;
   password!: string;
-  constructor() { }
+  constructor(private dialogRef : MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -22,5 +24,9 @@ export class UAuthComponent implements OnInit {
     else{
       console.log("Test de autenticacion: Incorrecto");
     }
+  }
+
+  openmodRC(){
+    this.dialogRef.open(ModalRecucontraComponent);
   }
 }

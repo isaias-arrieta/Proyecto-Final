@@ -9,13 +9,19 @@ import { UAuthComponent } from './components/uauth/uauth.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalRegisComponent } from './components/modal-regis/modal-regis.component';
 import { ModalRecucontraComponent } from './components/modal-recucontra/modal-recucontra.component';
+import { MainpageComponent } from './components/mainpage/mainpage.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { sidenavComponent } from './components/sidenav/sidenav.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     UAuthComponent,
     ModalRegisComponent,
-    ModalRecucontraComponent
+    ModalRecucontraComponent,
+    MainpageComponent,
+    sidenavComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +29,9 @@ import { ModalRecucontraComponent } from './components/modal-recucontra/modal-re
     FormsModule,
     MatDialogModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatListModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

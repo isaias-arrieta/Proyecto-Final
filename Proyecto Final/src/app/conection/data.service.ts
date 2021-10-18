@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataService {
-  private url='http://iacenter.victortalamantes.com'
+  private url='http://ricardoeisaias.com'
   constructor(private http: HttpClient) { }
  //#region Usuarios
   login(cnjson:data_user):Observable<data_user>{
@@ -31,6 +31,14 @@ export class DataService {
   //#endregion
 
   //#region path
-
+  uploadFile(file: File, iduser:string):Observable<any>{
+    return this.http.post<any>(this.url+"/user/login/"+iduser, file);
+  }
+  getFile(iduser:string):Observable<data_user>{
+    return this.http.get<data_user>(this.url+"/user/"+iduser);
+  }
+  getAllFiles():Observable<data_path[]>{
+    return this.http.get<data_path[]>(this.url+"/user/get/all");
+  }
   //#endregion
 }

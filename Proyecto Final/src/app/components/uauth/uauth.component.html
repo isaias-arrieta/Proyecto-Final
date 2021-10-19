@@ -1,0 +1,37 @@
+<style>
+    .res-pass{
+       float: right;
+       margin-top: 15px; 
+       cursor: pointer;
+    }
+    .log{
+        float: left;
+        margin-top: 15px;
+        cursor: pointer;
+    }
+
+    .txt{
+        margin-left: 40px;
+    }
+    
+    .txt2{
+        margin-left: 17.5px;
+    }
+</style>
+
+<form>
+    <div class = "input">
+        <label>Usuario</label>
+        <input class = "txt" type = "text" placeholder="Correo" name = "username" [(ngModel)] = "username!">
+    </div>
+    <div class = "input">
+        <label>Contraseña</label>
+        <input class = "txt2" type = "password" name = "password" [(ngModel)] = "password!">
+    </div>
+    <div class = "input">
+        <input class = "log" type = "submit" value = "Iniciar Sesión">
+    </div>
+    <div class = "input">
+        <input class = "res-pass" type = "submit" (click) = "openmodRC()" value = "Recuperar Contraseña">
+    </div>
+</form>

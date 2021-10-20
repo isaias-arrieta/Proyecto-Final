@@ -12,7 +12,9 @@ import { ModalRecucontraComponent } from './components/modal-recucontra/modal-re
 import { MainpageComponent } from './components/mainpage/mainpage.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { sidenavComponent } from './components/sidenav/sidenav.component'
+import { sidenavComponent } from './components/sidenav/sidenav.component';
+import { UpfileComponent } from './components/upfile/upfile.component';
+import { DeluserComponent } from './components/deluser/deluser.component'
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { sidenavComponent } from './components/sidenav/sidenav.component'
     ModalRecucontraComponent,
     MainpageComponent,
     sidenavComponent,
+    UpfileComponent,
+    DeluserComponent,
   ],
   imports: [
     BrowserModule,

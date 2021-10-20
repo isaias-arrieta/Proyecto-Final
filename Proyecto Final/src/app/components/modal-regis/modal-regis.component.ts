@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-modal-regis',
@@ -8,9 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class ModalRegisComponent implements OnInit {
 
 
-  constructor() { 
+  constructor(public matDialog : MatDialog) { 
   }
-
   ngOnInit(): void {
   }
 

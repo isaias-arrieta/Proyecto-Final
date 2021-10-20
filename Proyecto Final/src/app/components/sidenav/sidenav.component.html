@@ -13,21 +13,35 @@
     }
 
     li{
-        margin-top: 50px;
-        margin-bottom: 50px;
+        margin-top: 30px;
+        margin-bottom: 40px;
         font-size: medium;
         font-style: oblique;
         color: white;
         cursor: pointer;
     }
+
+    .searchbar{
+
+        margin-top: 50px;
+        border-radius: 10px;
+    }
+
+    .navbutt{
+
+        border-radius: 10px;
+    }
 </style>
 
 <mat-sidenav-container>
     <mat-sidenav mode = "side" [(opened)] = "opened">
-        <li>Búsqueda</li>
-        <li>Subir archivo</li>
-        <li>Opciones de usuario</li>
+        <input class="searchbar" type="text" placeholder="  Búsqueda">
+        <li  (click)="openDialog2()">Subir archivo</li>
+        <li>Opciones de usuario
+            <ul id="edituser" (click)="openEditDialog()">- Editar</ul>
+            <ul (click)="openDelDialog()">- Eliminar</ul>
+        </li>
         <li>Cerrar sesión</li>
     </mat-sidenav>
-    <mat-sidenav-content><button class="navbutt" (click) = "opened=!opened"> Toggle Opened</button></mat-sidenav-content>
+    <mat-sidenav-content><button class="navbutt" (click) = "opened=!opened">Menú</button></mat-sidenav-content>
 </mat-sidenav-container>

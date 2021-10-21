@@ -14,4 +14,7 @@ export class ModalRegisComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  cerrar(){
+    this.matDialog.closeAll();
+  }
 }

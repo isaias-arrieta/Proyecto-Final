@@ -29,4 +29,5 @@ export class sidenavComponent implements OnInit {
   openDelDialog(){
     this.dialogRef.open(DeluserComponent);
   }
+  
 }

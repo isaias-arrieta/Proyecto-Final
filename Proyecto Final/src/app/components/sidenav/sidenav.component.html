@@ -2,6 +2,7 @@
     mat-sidenav-container{
         margin-top: 159px;
         height: 636px;
+        max-width: 270px;
     }
 
     mat-sidenav, mat-sidenav-content{
@@ -118,13 +119,10 @@
 
 <mat-sidenav-container>
     <mat-sidenav mode = "side" [(opened)] = "opened">
-        <input class="searchbar" type="text" placeholder="  Búsqueda">
         <li  (click)="openDialog2()">Subir archivo</li>
-        <li>Opciones de usuario
-            <ul id="edituser" (click)="openEditDialog()">- Editar</ul>
-            <ul (click)="openDelDialog()">- Eliminar</ul>
-        </li>
+        <li (click)="openOpuser()">Opciones de usuario</li>
         <li>Cerrar sesión</li>
     </mat-sidenav>
     <mat-sidenav-content><button class="navbutt" (click) = "opened=!opened">Menú</button></mat-sidenav-content>
 </mat-sidenav-container>
+<div  *ngIf="display"><app-srcuser></app-srcuser></div>

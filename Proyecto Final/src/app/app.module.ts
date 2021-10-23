@@ -14,7 +14,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { sidenavComponent } from './components/sidenav/sidenav.component';
 import { UpfileComponent } from './components/upfile/upfile.component';
-import { DeluserComponent } from './components/deluser/deluser.component'
+import { DeluserComponent } from './components/deluser/deluser.component';
+import { SrcuserComponent } from './components/srcuser/srcuser.component'
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { DeluserComponent } from './components/deluser/deluser.component'
     sidenavComponent,
     UpfileComponent,
     DeluserComponent,
+    SrcuserComponent,
   ],
   imports: [
     BrowserModule,

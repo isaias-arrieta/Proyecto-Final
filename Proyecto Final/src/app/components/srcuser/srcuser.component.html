@@ -1,0 +1,85 @@
+<style>
+
+    .searchbar{
+
+        width: 150px;
+        margin-top: 50px;
+        border-radius: 10px;
+        margin-left: 60px;
+    }
+
+    .card{
+        
+        box-shadow: 0 4px 8px 0 rbga(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        margin-top: -605px;
+    }
+    
+    .edit{
+        text-align: center;
+        cursor: pointer;
+        margin-left: 30px;
+        width: 50%;
+    }
+
+    .kill{
+        text-align: center;
+        cursor: pointer;
+        margin-left: 50px;
+        width: 50%;
+    }
+
+    .close{
+        float: right;
+        margin-left: 15px;
+        cursor: pointer;
+    }
+
+    .title{
+        float: left;
+        margin-right: 5px;
+    }
+</style>
+
+
+<div class="card">
+    <div class="searchbar"><input type="text" placeholder=" Buscar usuario"></div>
+    <h2>Usuario -nombre-</h2>
+    <h2>Usuario -segundo nombre</h2>
+    <h2>Usuario -apellido</h2>
+    <h2>Usuario -contraseña</h2>
+    <button (click)="openEditDialog()">Editar</button>
+    <button (click)="openDelDialog()">Eliminar</button>
+</div>
+<form>
+    <h3 class= "title">Opciones de usuario</h3>
+    <h3 class = "close" (click)="cerrar()">X</h3>
+    <div class = "input">
+        <label>-Usuario-</label>
+        <br>
+        <input class = "txt" type = "text" name = "Nombre">
+    </div>
+    <br>
+    <div class = "input">
+        <label>Segundo nombre</label>
+        <br>
+        <input class = "txt2" type = "password" name = "SNombre">
+    </div>
+    <br>
+    <div class = "input">
+        <label>Apellido</label>
+        <br>
+        <input class = "txt2" type = "password" name = "Apellido">
+    </div>
+    <br>
+    <div class = "input">
+        <label>Contraseña</label>
+        <br>
+        <input class = "txt2" type = "password" name = "Contra">
+    </div>
+    <br>
+    <button class = "edit">Editar</button>
+    <button class = "kill">Eliminar</button>
+</form>

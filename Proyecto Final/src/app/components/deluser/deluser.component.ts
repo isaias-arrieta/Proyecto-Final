@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-deluser',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeluserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialogRef: MatDialog ) { }
 
   ngOnInit(): void {
   }
 
+  cerrar(){
+    this.dialogRef.closeAll();
+  }
 }

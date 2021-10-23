@@ -1,6 +1,8 @@
 <style>
     mat-sidenav-container{
-        height: 100%;
+        margin-top: 159px;
+        height: 636px;
+        max-width: 270px;
     }
 
     mat-sidenav, mat-sidenav-content{
@@ -21,8 +23,39 @@
         cursor: pointer;
     }
 
+    .navbutt{
+
+        border-radius: 10px;
+    }
+
+    @media screen and (max-width: 768px){ 
+        
+        mat-sidenav-container{
+        margin-top: 119px;
+        height: 549px;
+    }
+
+    mat-sidenav, mat-sidenav-content{
+        padding: 15px;
+    }
+
+    mat-sidenav{
+        background-color:#1976d2;
+        width: 195px;
+    }
+
+    li{
+        margin-top: 30px;
+        margin-bottom: 40px;
+        font-size: medium;
+        font-style: oblique;
+        color: white;
+        cursor: pointer;
+    }
+
     .searchbar{
 
+        width: 150px;
         margin-top: 50px;
         border-radius: 10px;
     }
@@ -31,17 +64,58 @@
 
         border-radius: 10px;
     }
+    }
+
+    @media screen and (max-width: 425px){ 
+        
+        mat-sidenav-container{
+        margin-top: 111px;
+        height: 549px;
+    }
+
+    mat-sidenav, mat-sidenav-content{
+        padding: 15px;
+    }
+
+    mat-sidenav{
+        background-color:#1976d2;
+        width: 105px;
+    }
+
+    li{
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-size: small;
+        font-style: oblique;
+        color: white;
+        cursor: pointer;
+    }
+
+    ul{
+        padding-left: 15px;
+    }
+
+    .searchbar{
+
+        width: 65px;
+        margin-top: 50px;
+        border-radius: 10px;
+    }
+
+    .navbutt{
+
+        border-radius: 10px;
+    }
+    }
 </style>
 
 <mat-sidenav-container>
     <mat-sidenav mode = "side" [(opened)] = "opened">
-        <input class="searchbar" type="text" placeholder="  Búsqueda">
         <li  (click)="openDialog2()">Subir archivo</li>
-        <li>Opciones de usuario
-            <ul id="edituser" (click)="openEditDialog()">- Editar</ul>
-            <ul (click)="openDelDialog()">- Eliminar</ul>
-        </li>
+        <li (click)="openOpuser()">Opciones de usuario</li>
         <li>Cerrar sesión</li>
     </mat-sidenav>
     <mat-sidenav-content><button class="navbutt" (click) = "opened=!opened">Menú</button></mat-sidenav-content>
 </mat-sidenav-container>
+<div  *ngIf="display"><app-srcuser></app-srcuser></div>

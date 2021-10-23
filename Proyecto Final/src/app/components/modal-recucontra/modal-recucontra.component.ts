@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-modal-recucontra',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalRecucontraComponent implements OnInit {
 
-  constructor() { }
+  constructor(private matDialog : MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  cerrar(){
+    this.matDialog.closeAll();
   }
 
 }

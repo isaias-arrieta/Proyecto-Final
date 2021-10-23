@@ -66,5 +66,8 @@ export class DataService {
   getAllFiles():Observable<data_path[]>{
     return this.http.get<data_path[]>(this.url+"/path/get/all", { headers: this.headers });
   }
+  deleteFile(id: string):Observable<any>{
+    return this.http.delete<any>(this.url+"/path/delete/"+id, { headers: this.headers });
+  }
   //#endregion
 }

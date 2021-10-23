@@ -17,10 +17,15 @@ export class MainpageComponent implements OnInit {
   ngOnInit(): void {
     this.getAllUsers();
   }
+  deleteFile(id:string){
+    if (confirm('¿Desea eliminar este archivo?')) {
+     this.datasv.deleteFile(id).subscribe();
+     
+    } else {
 
-  getAllUsers() {
-  
-      this.datasv.getAllFiles().subscribe((data) => (this.imageList = data));
-   
+    }
+  }
+  getAllUsers() {  
+      this.datasv.getAllFiles().subscribe((data) => (this.imageList = data));   
   }
 }

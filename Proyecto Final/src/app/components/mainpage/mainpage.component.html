@@ -1,25 +1,24 @@
-
-
-<app-sidenav></app-sidenav>
-
-
 <div class="toolbar" role="banner">
 
 <h2 class = "derecha">Usuario</h2>
 </div>
 
 
-<div class="content" >
+<div class="content">
   <div fxLayout="row wrap" fxLayoutGap="1.75em grid">
-    <div fxFlex="10%" fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="33%" *ngFor="let image of imageList">
-      <div class="cardimage" id="">
+    <div fxFlex="20%" fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="33%"*ngFor="let image of imageList">
+      <div class="cardimage" id="{{image.id}}">
         <div class="card-header-image">
-          <img src="http://localhost:3000/uploads/{{image.filePath}}"/>
-          
+          {{image.name}}          
         </div>
 
-        <div class="card-content">
-          {{image.name}}
+        <div class="card-content" >
+          <img src="http://localhost:3000/uploads/{{image.filePath}}"/>
+         
+        </div>
+        <div class="card-delete" (click)="deleteFile('{{image.id}}')">
+          <img src="../../../assets/iconmonstr-trash-can-1.svg"/>
+         
         </div>
       </div>
      

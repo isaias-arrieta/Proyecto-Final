@@ -17,6 +17,7 @@ import { UpfileComponent } from './components/upfile/upfile.component';
 import { DeluserComponent } from './components/deluser/deluser.component'
 import { AuthInterceptor } from './conection/uauth.Interceptor';
 import { HTTP_INTERCEPTORS  } from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { HTTP_INTERCEPTORS  } from '@angular/common/http';
     BrowserAnimationsModule,
     MatListModule,
     MatSidenavModule,
-    HttpClientModule
+    HttpClientModule,
+    FlexLayoutModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

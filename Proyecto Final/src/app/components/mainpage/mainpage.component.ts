@@ -1,14 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Input, OnInit } from '@angular/core';
+import { DataService } from 'src/app/conection/data.service';
+import {data_user, data_path} from '../../conection/ModelInterface'
 @Component({
   selector: 'app-mainpage',
   templateUrl: './mainpage.component.html',
   styleUrls: ['./mainpage.component.scss']
 })
 export class MainpageComponent implements OnInit {
+  userslist!: data_user[];
+  imageList!: data_path[];
+  @Input() parentData:data_path[]  = [];
 
-  constructor() { }
+  @Input("data") modifiedName:data_path[]  = [];
+  constructor(private datasv: DataService) { }
 
   ngOnInit(): void {
+    this.getAllUsers();
+  }
+
+  getAllUsers() {
+  
+      this.datasv.getAllFiles().subscribe((data) => (this.imageList = data));
+   
   }
 }

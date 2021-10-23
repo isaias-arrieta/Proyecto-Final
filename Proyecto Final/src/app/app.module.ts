@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UAuthComponent } from './components/uauth/uauth.component';
@@ -15,7 +15,8 @@ import { MatListModule } from '@angular/material/list';
 import { sidenavComponent } from './components/sidenav/sidenav.component';
 import { UpfileComponent } from './components/upfile/upfile.component';
 import { DeluserComponent } from './components/deluser/deluser.component'
-
+import { AuthInterceptor } from './conection/uauth.Interceptor';
+import { HTTP_INTERCEPTORS  } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,9 +36,14 @@ import { DeluserComponent } from './components/deluser/deluser.component'
     BrowserModule,
     BrowserAnimationsModule,
     MatListModule,
-    MatSidenavModule
+    MatSidenavModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

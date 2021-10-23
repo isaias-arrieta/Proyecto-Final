@@ -25,12 +25,12 @@
         text-align: center;
     }
 </style>
-<form>
+<form action="/path/upload/1" id="post" method="post" enctype="multipart/form-data">
     <h3 class= "title">Subir archivos</h3>
     <h3 class = "close">X</h3>
     <div class = "input">
-        <input class = "txt2" type = "file" name = "archivos">
+        <input type="file" name="images" multiple (change)="selectMultipleImage($event)" />
     </div>
     <br>
-    <input type="submit" value ="subir" class = "save">
+    <button type="submit" (click)="onMultipleSubmit()">Multiple Upload</button>
 </form>

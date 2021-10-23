@@ -17,11 +17,5 @@ export class AppComponent {
 
   }
 
-  openDialog(){
-    this.dialogRef.open(ModalRegisComponent);
-  }
-
-  gotomain(){
-    this.router.navigate(['/mainpage'])
-  }
+ 
 }
